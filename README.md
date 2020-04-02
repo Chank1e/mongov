@@ -48,19 +48,25 @@ mongo drive for vlang
     collection := mongo.client_get_collection(client, 'db_name', 'collection_name')
     bson_document := bson.new()
     bson.append_bool(bson_document, 'key' false)
-    mongo.collection_insert_one (collection, bson1)
+    mongo.collection_insert_one (collection, bson_document)
     ```
 
 - find documents by query
     ```v
-    bson1 := bson.new()
+    query := bson.new()
     bson_doc := bson.new()
-    bson.append_bool(bson1, 'bool', true)
+    bson.append_bool(query, 'bool', true)
 
-    cursor := mongo.collection_find_with_opts(collection, bson1)
+    cursor := mongo.collection_find_with_opts(collection, query)
 
     for mongo.cursor_next(cursor, &bson_doc) {
         str := bson.as_canonical_extended_json(bson_doc)
         println(str)
     }
     ```
+- initialize BSON from JSON :heart_eyes:
+  ```v
+  bson_doc := bson.new()
+  json_doc := '{"heeey": "howudoinggggg =)"}'
+  bson.init_from_json(bson_doc, json_doc)
+  ```

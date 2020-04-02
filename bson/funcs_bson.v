@@ -15,3 +15,7 @@ pub fn free(mem voidptr) {
 pub fn as_canonical_extended_json(document &C.bson_t) string {
 	return string(C.bson_as_canonical_extended_json(document, 0))
 }
+
+pub fn init_from_json(document &C.bson_t, json_data string) bool {
+	return C.bson_init_from_json(document, json_data.str, -1, 0)
+}
