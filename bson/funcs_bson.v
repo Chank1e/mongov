@@ -4,6 +4,10 @@ pub fn new() &C.bson_t {
 	return C.bson_new()
 }
 
+pub fn new_from_json(json_data string) &C.bson_t {
+	return C.bson_new_from_json(json_data.str, -1, 0)
+}
+
 pub fn destroy(document &C.bson_t) {
 	C.bson_destroy(document)
 }
