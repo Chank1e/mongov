@@ -17,7 +17,7 @@ fn C.bson_oid_init(&C.bson_oid_t, &C.bson_context_t)
 fn C.bson_append_array(&C.bson_t, string, int, &C.bson_t) bool // http://mongoc.org/libbson/current/bson_append_array.html
 fn C.bson_append_array_begin(&C.bson_t, string, int, &C.bson_t) bool // http://mongoc.org/libbson/current/bson_append_array_begin.html
 fn C.bson_append_array_end(&C.bson_t, &C.bson_t) bool // http://mongoc.org/libbson/current/bson_append_array_end.html
-fn C.bson_append_binary(&C.bson_t, string, int, &byte, u32) bool // http://mongoc.org/libbson/current/bson_append_binary.html
+fn C.bson_append_binary(&C.bson_t, string, int, &C.bson_subtype_t, &byte, u32) bool // http://mongoc.org/libbson/current/bson_append_binary.html
 fn C.bson_append_bool(&C.bson_t, string, int, bool) bool // http://mongoc.org/libbson/current/bson_append_bool.html
 fn C.bson_append_code(&C.bson_t, string, int, string) bool // http://mongoc.org/libbson/current/bson_append_code.html
 fn C.bson_append_code_with_scope(&C.bson_t, string, int, string, &C.bson_t) bool // http://mongoc.org/libbson/current/bson_append_code_with_scope.html
@@ -31,7 +31,7 @@ fn C.bson_append_int32(&C.bson_t, string, int, int) bool // http://mongoc.org/li
 fn C.bson_append_int64(&C.bson_t, string, int, i64) bool // http://mongoc.org/libbson/current/bson_append_int64.html
 fn C.bson_append_maxkey(&C.bson_t, string, int) bool // http://mongoc.org/libbson/current/bson_append_maxkey.html
 fn C.bson_append_minkey(&C.bson_t, string, int) bool // http://mongoc.org/libbson/current/bson_append_minkey.html
-fn C.bson_append_npw_utc(&C.bson_t, string, int) bool // http://mongoc.org/libbson/current/bson_append_npw_utc.html
+fn C.bson_append_now_utc(&C.bson_t, string, int) bool // http://mongoc.org/libbson/current/bson_append_now_utc.html
 fn C.bson_append_null(&C.bson_t, string, int) bool // http://mongoc.org/libbson/current/bson_append_null.html
 fn C.bson_append_oid(&C.bson_t, string, int, &C.bson_oid_t) bool // http://mongoc.org/libbson/current/bson_append_oid.html
 fn C.bson_append_regex(&C.bson_t, string, int, string, string) bool // http://mongoc.org/libbson/current/bson_append_regex.html
