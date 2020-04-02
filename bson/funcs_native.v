@@ -5,6 +5,8 @@ module bson
 //
 fn C.bson_new() &C.bson_t
 fn C.bson_destroy(&C.bson_t)
+fn C.bson_free(voidptr)
+fn C.bson_as_canonical_extended_json(&C.bson_t, int) byteptr
 
 //
 // bson_oid_t http://mongoc.org/libbson/current/bson_oid_t.html
