@@ -5,7 +5,6 @@ import mongo
 
 fn main() {
 	uri := 'mongodb://127.0.0.1:27017'
-	mongo.initialize()
 	
 	mongo_uri := mongo.uri_new(uri)
 	client := mongo.client_new_from_uri(mongo_uri)

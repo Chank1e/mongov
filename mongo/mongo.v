@@ -7,3 +7,7 @@ module mongo
 
 #include "mongoc/mongoc.h"
 #include "bson/bson.h"
+
+fn init() {
+	initialize()
+}
