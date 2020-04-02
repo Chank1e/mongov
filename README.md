@@ -70,3 +70,14 @@ mongo drive for vlang
   json_doc := '{"heeey": "howudoinggggg =)"}'
   bson.init_from_json(bson_doc, json_doc)
   ```
+- update value by selector and update :frog:
+  ```v
+  selector := bson.new()
+  update := bson.new()
+
+  bson.init_from_json(selector, '{"key":"value1"}')
+  bson.init_from_json(update, '{"\$set":{"value":"key1"}}')
+
+
+  mongo.collection_update_one(collection, selector, update)
+  ```

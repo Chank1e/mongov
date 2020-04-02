@@ -13,9 +13,11 @@ fn main() {
 	database := mongo.client_get_database(client, 'db_name')
 	collection := mongo.client_get_collection(client, 'db_name', 'collection_name')
 	
-	bson_doc := bson.new()
+	selector := bson.new()
+	update := bson.new()
 
-	bson.init_from_json(bson_doc, '{"welcome": "to hell"}')
+	bson.init_from_json(selector, '{"key":"value1"}')
+	bson.init_from_json(update, '{"\$set":{"value":"key1"}}')
 	
 	// oid := &C.bson_oid_t{}
 
@@ -32,7 +34,8 @@ fn main() {
 	// }
 
 
-	mongo.collection_insert_one(collection, bson_doc)
+	mongo.collection_update_one(collection, selector, update)
+	// mongo.collection_insert_one(collection, update)
 	
 	
 

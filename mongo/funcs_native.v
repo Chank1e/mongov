@@ -20,6 +20,7 @@ fn C.mongoc_client_get_collection(client &C.mongoc_client_t, db byteptr, coll by
 //
 fn C.mongoc_collection_insert_one(&C.mongoc_collection_t, &C.bson_t, &C.bson_t, &C.bson_t, &C.bson_error_t) bool
 fn C.mongoc_collection_find_with_opts(&C.mongoc_collection_t, &C.bson_t, &C.bson_t, &C.mongoc_read_prefs_t) &C.mongoc_cursor_t
+fn C.mongoc_collection_update_one(&C.mongoc_collection_t, &C.bson_t, &C.bson_t, &C.bson_t, &C.bson_t, &C.bson_error_t) bool
 
 //
 //	mongoc_cursor_t http://mongoc.org/libmongoc/current/mongoc_cursor_t.html

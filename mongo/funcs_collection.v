@@ -14,3 +14,11 @@ pub fn collection_find_with_opts(
 	return C.mongoc_collection_find_with_opts(collection, filter, 0, 0)
 }
 
+pub fn collection_update_one(
+		collection &C.mongoc_collection_t,
+		selector &C.bson_t,
+		update &C.bson_t,
+) bool {
+	return C.mongoc_collection_update_one(collection, selector, update, 0, 0, 0)
+}
+
