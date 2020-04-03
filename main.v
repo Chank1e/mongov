@@ -2,6 +2,7 @@ module main
 
 import bson
 import mongo
+import json
 
 fn main() {
 	uri := 'mongodb://127.0.0.1:27017'
@@ -9,12 +10,12 @@ fn main() {
 	mongo_uri := mongo.uri_new(uri)
 	client := mongo.client_new_from_uri(mongo_uri)
 
-	database := mongo.client_get_database(client, 'db_name')
+	// database := mongo.client_get_database(client, 'db_name')
 	collection := mongo.client_get_collection(client, 'db_name', 'collection_name')
 	
-	selector := bson.new_from_json('{"key":"value1"}')
-	update := bson.new_from_json('{"\$set":{"value1":"key2"}}')
-	
+	// selector := bson.new_from_json('{"key":"value1"}')
+	// update := bson.new_from_json('{"\$set":{"value1":"key2"}}')
+	print(json.encode({'hello': 'world'}))
 	// oid := &C.bson_oid_t{}
 
 	// bson.oid_init(&oid)
@@ -30,7 +31,7 @@ fn main() {
 	// }
 
 
-	mongo.collection_delete_one(collection, bson.new_from_json('{"key":"value2"}'))
+	// mongo.collection_delete_one(collection, bson.new_from_json('{"key":"value2"}'))
 	// mongo.collection_insert_one(collection, update)
 	
 	
