@@ -8,6 +8,14 @@ module bson
 fn C.bson_as_json(&C.bson_t, int) byteptr
 fn C.bson_as_relaxed_extended_json(&C.bson_t, int) byteptr
 fn C.bson_compare(&C.bson_t, &C.bson_t) int
+fn C.bson_concat(&C.bson_t, &C.bson_t) bool
+fn C.bson_copy(&C.bson_t) &C.bson_t
+fn C.bson_copy_to(&C.bson_t, &C.bson_t)
+fn C.bson_copy_to_excluding(&C.bson_t, &C.bson_t, byteptr)
+fn C.bson_count_keys(&C.bson_t) u32
+fn C.bson_equal(&C.bson_t, &C.bson_t) bool
+fn C.bson_get_data(&C.bson_t) byte
+fn C.bson_has_field(&C.bson_t, byteptr) bool
 
 fn C.bson_new() &C.bson_t
 fn C.bson_destroy(&C.bson_t)
