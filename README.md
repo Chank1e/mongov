@@ -6,6 +6,11 @@ mongo drive for vlang
 - libmongoc
 - libbson
 
+**Modules**
+
+- [bson](docs/bson.md)
+- [mongo](docs/mongo.md)
+
 
 **Examples**
 
