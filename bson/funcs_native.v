@@ -16,7 +16,6 @@ fn C.bson_count_keys(&C.bson_t) u32
 fn C.bson_equal(&C.bson_t, &C.bson_t) bool
 fn C.bson_get_data(&C.bson_t) byte
 fn C.bson_has_field(&C.bson_t, byteptr) bool
-
 fn C.bson_new() &C.bson_t
 fn C.bson_destroy(&C.bson_t)
 fn C.bson_free(voidptr)
@@ -49,12 +48,41 @@ fn C.bson_append_regex_w_len(&C.bson_t, byteptr, int, byteptr, int, byteptr) boo
 fn C.bson_append_symbol(&C.bson_t, byteptr, int, byteptr, int) bool // http://mongoc.org/libbson/current/bson_append_symbol.html
 fn C.bson_append_time_t(&C.bson_t, byteptr, int, u32) bool // http://mongoc.org/libbson/current/bson_append_time_t.html
 fn C.bson_append_timestamp(&C.bson_t, byteptr, int, u32, u32) bool // http://mongoc.org/libbson/current/bson_append_timestamp.html
-// TODO: bson_append_timeval
 fn C.bson_append_undefined(&C.bson_t, byteptr, int) bool // http://mongoc.org/libbson/current/bson_append_undefined.html
 fn C.bson_append_utf8(&C.bson_t, byteptr, int, byteptr, int) bool // http://mongoc.org/libbson/current/bson_append_utf8.html
 fn C.bson_append_value(&C.bson_t, byteptr, int, &C.bson_value_t) bool // http://mongoc.org/libbson/current/bson_append_value.html
 
+
+// TODO: not implemented
+// fn bson_append_timeval
+// fn bson_validate_with_error
+// fn bson_steal
+// fn bson_sized_new
+// fn bson_new_from_data
+// fn bson_new_from_buffer
+// fn bson_init_static
+// fn bson_destroy_with_steal
+// fn bson_copy_to_excluding_noinit
+// fn bson_copy_to_excluding_noinit_va
+// fn bson_reinit
+// fn bson_reserve_buffer
+// fn bson_append_dbpointer
+// fn bson_array_as_json
+// fn bson_append_iter
+
+
 //
 // bson_oid_t http://mongoc.org/libbson/current/bson_oid_t.html
 //
+fn C.bson_oid_compare(&C.bson_oid_t, &C.bson_oid_t) int
+fn C.bson_oid_copy(&C.bson_oid_t, &C.bson_oid_t)
+fn C.bson_oid_equal(&C.bson_oid_t, &C.bson_oid_t) bool
+fn C.bson_oid_get_time_t(&C.bson_oid_t) int
+fn C.bson_oid_hash(&C.bson_oid_t) u32
+fn C.bson_oid_init_from_data(&C.bson_oid_t, byte)
+fn C.bson_oid_init_from_string(&C.bson_oid_t, byteptr)
+// DEPRECATED: bson_oid_init_sequence
+fn C.bson_oid_is_valid(byteptr, int) bool
+fn C.bson_oid_to_string(&C.bson_oid_t, string)
+
 fn C.bson_oid_init(&C.bson_oid_t, &C.bson_context_t)
